@@ -15,7 +15,7 @@ void mqbstt_callback_aufrufen   ();
 
 /////////////////////////////////////////////////////////////////////////// Schleifen verwalten
 unsigned long previousMillis_temp_messen = 0; // Spannung Messen
-unsigned long interval_temp_messen = 7500; 
+unsigned long interval_temp_messen = 2500; 
 
 unsigned long previousMillis_mqtt_callback = 0; // Spannung Messen
 unsigned long interval_mqtt_callback = 500; 
@@ -27,12 +27,12 @@ char textTOtopic[60];
 const char* kartenID = "ANKE581_Temp_001";
 
 /////////////////////////////////////////////////////////////////////////// WIRE Bus
-#define ONE_WIRE_BUS D4
+#define ONE_WIRE_BUS D5
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 
 /////////////////////////////////////////////////////////////////////////// Temp. Sensor HEX zuweisen
-DeviceAddress temp_sensor_1         = { 0x28, 0x50, 0x3A, 0x7C, 0x1E, 0x13, 0x01, 0xEA }; 
+DeviceAddress temp_sensor_1         = { 0x28, 0xF3, 0xF5, 0x7C, 0x1B, 0x13, 0x01, 0x97 }; 
 //                                  28 DB 51 80 1E 13 01 FA
 const char* topic_sensor_1     = "ANKE581/temp001/Sensor1";
 
